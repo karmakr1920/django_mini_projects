@@ -1,0 +1,18 @@
+# Ignore virtual environments in all projects
+*/venv/
+
+# Ignore .pyc files
+*.pyc
+
+# Ignore database files
+*.sqlite3
+
+# Ignore IDE settings (VSCode, PyCharm, etc.)
+.vscode/
+.idea/
+
+# Ignore environment variable files
+*.env
+
+# Ignore Python cache files
+__pycache__/
