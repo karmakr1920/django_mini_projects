@@ -39,10 +39,14 @@
                 </div>
             </div>
 
-            {% if tasks %}
+            
             <!-- Task List Column -->
             <div class="col-md-6">
+                {% if tasks %}
                 <h3 class="text-center mb-4">Task List</h3>
+                {% else %}
+                <h3 class="text-center mb-4">No tasks found</h3>
+                {% endif %}
 
                 <!-- Displaying Django Messages as Toasts in Top Right -->
                 {% if messages %}
@@ -60,6 +64,7 @@
                     </div>
                 {% endif %}
 
+                {% if tasks %}
                 <!-- Task List Table -->
                 <table class="table table-bordered table-striped">
                     <thead>
@@ -82,9 +87,7 @@
                                 </td>
                                 <td>
                                     <!-- Edit Button -->
-                                    <button class="btn btn-warning btn-sm" 
-        onclick="editTask({{ task.id }}, '{{ task.title }}', {{ task.is_completed|yesno:"true,false" }})">
-Edit</button>
+                                    <button class="btn btn-warning btn-sm" onclick="editTask({{ task.id }}, '{{ task.title }}', {{ task.is_completed|yesno:"true,false" }})">Edit</button>
 
                                     <!-- Delete Button -->
                                     <form method="POST" action="{% url 'delete_task' task.id %}" style="display:inline;">
@@ -96,8 +99,9 @@ Edit</button>
                         {% endfor %}
                     </tbody>
                 </table>
+                {% endif %}
             </div>
-            {% endif %}
+
         </div>
     </div>
 
@@ -108,13 +112,22 @@ Edit</button>
     <script>
         // Function to toggle the form for editing a task
         function editTask(id, title, isCompleted) {
-            // Change form to "Edit Task" mode
             document.getElementById('formTitle').innerText = 'Edit Task';
             document.getElementById('taskTitle').value = title;
             document.getElementById('is_completed').checked = isCompleted;
             document.getElementById('submitButton').innerText = 'Update Task';
             document.getElementById('task_id').value = id;
         }
+    
+        // 🔥 Show Bootstrap toast messages on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+            toastElList.forEach(function (toastEl) {
+                var toast = new bootstrap.Toast(toastEl)
+                toast.show()
+            })
+        });
     </script>
+    
 </body>
 </html>
