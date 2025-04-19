@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+LOGIN_URL ='login'
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tracker'
 ]
+# Custom user model
+AUTH_USER_MODEL = 'tracker.CustomUser'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

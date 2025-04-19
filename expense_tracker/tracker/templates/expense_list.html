@@ -1,0 +1,13 @@
+<h2>My Expenses</h2>
+<a href="{% url 'expense-create' %}">Add New</a> | <a href="{% url 'logout' %}">Logout</a>
+<ul>
+  {% for expense in expenses %}
+    <li>
+      {{ expense.title }} - {{ expense.amount }} - {{ expense.date }} - {{expense.category.name}}
+      <a href="{% url 'expense-update' expense.id %}">Edit</a>
+      <a href="{% url 'expense-delete' expense.id %}">Delete</a>
+    </li>
+    {% empty %}
+    <p>No expenses found.</p>
+  {% endfor %}
+</ul>
