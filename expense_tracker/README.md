@@ -1,4 +1,3 @@
-```markdown
 # 💸 Django Expense Tracker
 
 A beginner-friendly and responsive **Expense Tracker** web app built using **Django**, **HTML**, **CSS**, and **Bootstrap**.  
@@ -97,4 +96,3 @@ Built as part of a learning task from **GeeksforGeeks (GFG)**
 Open to feedback and suggestions!
 
 GitHub Repo: https://github.com/karmakr1920/python_mini_projects.git
-```
