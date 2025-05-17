@@ -10,7 +10,7 @@ Supports expense tracking with full CRUD, user authentication, and mobile-friend
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/karmakr1920/python_mini_projects.git
+git clone https://github.com/karmakr1920/django_mini_projects.git
 cd python_mini_projects/expense_tracker
 ```
 
@@ -95,4 +95,4 @@ Open-source under the **MIT License**.
 Built as part of a learning task from **GeeksforGeeks (GFG)**  
 Open to feedback and suggestions!
 
-GitHub Repo: https://github.com/karmakr1920/python_mini_projects.git
+GitHub Repo: https://github.com/karmakr1920/django_mini_projects.git

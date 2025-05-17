@@ -35,7 +35,7 @@ README.md
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/karmakr1920/python_mini_projects.git
+git clone https://github.com/karmakr1920/django_mini_projects.git
 cd todo_app
 ```
 
